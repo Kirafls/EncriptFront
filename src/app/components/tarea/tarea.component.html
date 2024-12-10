@@ -1,0 +1,21 @@
+<div>
+    <button (click)="encriptar()">Solicitar Tarea</button>
+</div>
+
+<div *ngIf="texto">
+    <h2>Texto recibido:</h2>
+    <p>{{ texto }}</p>
+  
+    <h2>Texto encriptado:</h2>
+    <p>{{ textoEncriptado }}</p>
+  
+    <button (click)="enviarTarea()">Enviar al servidor</button>
+  </div>
+  
+  <div *ngIf="!texto">
+    <p>Esperando Tarea ...</p>
+  </div>
+  
+  <div *ngIf="mensaje">
+    <p>{{ mensaje }}</p>
+  </div>
