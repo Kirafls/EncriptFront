@@ -31,8 +31,12 @@ export class LoginComponent {
         error: (err) => {
           console.error('Error en el inicio de sesión:', err);
           this.errorMessage = 'Credenciales incorrectas o error en el servidor';
+          alert(this.errorMessage);
         },
       });
+  }
+  createUser():void{
+    this.router.navigate(['/createuser']);
   }
   
 }

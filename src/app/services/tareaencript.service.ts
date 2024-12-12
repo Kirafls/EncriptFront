@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TareaencriptService {
   private apiUrl = 'http://localhost:3000/api/tarea'; // URL del servidor Express
+  
   constructor(private http: HttpClient) { }
     // Método para obtener la tarea del servidor
     getTarea(): Observable<{ texto: string }> {

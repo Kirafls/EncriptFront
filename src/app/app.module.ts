@@ -10,6 +10,7 @@ import { ProtectedComponent } from './components/protected/protected.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+import { NuevouserComponent } from './components/nuevouser/nuevouser.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TareaComponent } from './components/tarea/tarea.component';
     LoginComponent,
     ProtectedComponent,
     InicioComponent,
-    TareaComponent
+    TareaComponent,
+    NuevouserComponent
   ],
   imports: [
     BrowserModule,
