@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Formulario de Solicitud</h2>
+  <form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()">
+    <!-- Campo Mensaje -->
+    <div class="mb-3">
+      <label for="mensaje" class="form-label">Mensaje</label>
+      <textarea 
+        id="mensaje" 
+        class="form-control" 
+        rows="3" 
+        formControlName="mensaje" 
+        placeholder="Ingrese el mensaje">
+      </textarea>
+      <div class="text-danger" *ngIf="solicitudForm.get('mensaje')?.invalid && solicitudForm.get('mensaje')?.touched">
+        El mensaje es obligatorio.
+      </div>
+    </div>
+
+    <!-- Campo Llave -->
+    <div class="mb-3">
+      <label for="llave" class="form-label">Llave</label>
+      <input 
+        type="text" 
+        id="llave" 
+        class="form-control" 
+        formControlName="llave" 
+        placeholder="Ingrese la llave">
+        <div class="text-danger" *ngIf="solicitudForm.get('llave')?.invalid && solicitudForm.get('llave')?.touched">
+          El mensaje es obligatorio.
+        </div>
+    </div>
+
+    <!-- Campo Algoritmo (con selecciones) -->
+    <div class="mb-3">
+      <label for="algoritmo" class="form-label">Algoritmo</label>
+      <select 
+        id="algoritmo" 
+        class="form-control" 
+        formControlName="algoritmo">
+        <option value="" disabled selected>Seleccione un algoritmo</option>
+        <option value="1">Algoritmo 1</option>
+        <option value="2">Algoritmo 2</option>
+      </select>
+      <div class="text-danger" *ngIf="solicitudForm.get('algoritmo')?.invalid && solicitudForm.get('algoritmo')?.touched">
+        Debe seleccionar un algoritmo.
+      </div>
+    </div>
+
+    <!-- Botón Enviar -->
+    <button type="submit" class="btn btn-primary" [disabled]="solicitudForm.invalid">Enviar</button>
+  </form>
+
+  <!-- Mensaje de éxito -->
+  <div class="mt-3 alert alert-success" *ngIf="success">
+    Formulario enviado exitosamente.
+  </div>
+</div>

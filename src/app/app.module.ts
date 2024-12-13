@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { NuevouserComponent } from './components/nuevouser/nuevouser.component';
+import { SolicitudComponent } from './components/solicitud/solicitud.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EstadisticaComponent } from './components/estadistica/estadistica.component'; 
 
 
 @NgModule({
@@ -20,13 +23,16 @@ import { NuevouserComponent } from './components/nuevouser/nuevouser.component';
     ProtectedComponent,
     InicioComponent,
     TareaComponent,
-    NuevouserComponent
+    NuevouserComponent,
+    SolicitudComponent,
+    EstadisticaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },

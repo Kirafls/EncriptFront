@@ -12,9 +12,11 @@ export class ProtectedComponent {
   constructor(private login:LoginService,private router:Router){}
   isAuthenticated(): boolean {
     return this.login.isAuthenticated();
+    
   }
   logout(): void {
     this.login.removeToken();
+    localStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
 }

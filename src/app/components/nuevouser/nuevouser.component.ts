@@ -25,4 +25,8 @@ export class NuevouserComponent {
       }
     })
   }
+
+  cancel():void{
+    this.router.navigate(['/login']);
+  }
 }

@@ -13,9 +13,14 @@ export class TareaencriptService {
     getTarea(): Observable<{ texto: string }> {
       return this.http.get<{ texto: string }>(this.apiUrl);
     }
-  
-    // Método para enviar el texto encriptado al servidor
-    sendTarea(textoEncriptado: string): Observable<any> {
-      return this.http.post(this.apiUrl, { textoEncriptado });
+    public getdata():Observable<any>{
+      return this.http.get<any>(this.apiUrl);
     }
+
+    private sol= 'http://localhost:3000/bd/sol';
+      
+    nuevaSol(mensaje:string,llave:string,algoritmo:string):Observable<any>{
+      return this.http.post(this.sol,{mensaje,llave,algoritmo});
+    }
+    
 }

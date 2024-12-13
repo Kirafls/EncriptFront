@@ -23,6 +23,7 @@ export class LoginComponent {
           if (response && response.token) {
             this.authService.saveToken(response.token);
             console.log('Inicio de sesión exitoso');
+            localStorage.setItem('username', this.username);
             this.router.navigate(['/protected']); // Redirige a la ruta protegida
           } else {
             console.error('Respuesta inesperada del servidor');

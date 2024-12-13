@@ -1,21 +1,5 @@
-<div>
-    <button (click)="encriptar()">Solicitar Tarea</button>
+<div class="container text-center mx-auto p-3">
+  <h2>Solicitud de tareas</h2>
+  <p>En este apartado tu puedes solicitar tareas, para realizar la encriptación y regresar los resultados</p>
 </div>
-
-<div *ngIf="texto">
-    <h2>Texto recibido:</h2>
-    <p>{{ texto }}</p>
-  
-    <h2>Texto encriptado:</h2>
-    <p>{{ textoEncriptado }}</p>
-  
-    <button (click)="enviarTarea()">Enviar al servidor</button>
-  </div>
-  
-  <div *ngIf="!texto">
-    <p>Esperando Tarea ...</p>
-  </div>
-  
-  <div *ngIf="mensaje">
-    <p>{{ mensaje }}</p>
-  </div>
+<button >encriptacion</button>

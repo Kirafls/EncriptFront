@@ -69,6 +69,28 @@
       margin: 0 auto;
     }
     
+    .btn2 {
+      border: 2px solid transparent;
+      background: #298527;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 25px;
+      padding: 10px 0;
+      text-decoration: none;
+      text-shadow: none;
+      border-radius: 10px;
+      box-shadow: none;
+      transition: 0.25s;
+      display: block;
+      width: 250px;
+      margin: 0 auto;
+    }
+
+    .btn2:hover {
+      background-color: #0c5b20;
+    }
+    
+
     .btn:hover {
       background-color: #2980B9;
     }

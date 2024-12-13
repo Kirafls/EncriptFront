@@ -6,6 +6,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { NuevouserComponent } from './components/nuevouser/nuevouser.component';
+import { SolicitudComponent } from './components/solicitud/solicitud.component';
+import { EstadisticaComponent } from './components/estadistica/estadistica.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +24,14 @@ const routes: Routes = [
       {
         path: 'tarea',
         component: TareaComponent
+      },
+      {
+        path: 'solicitud',
+        component: SolicitudComponent
+      },
+      {
+        path: 'estadisticas',
+        component: EstadisticaComponent
       }
     ]
   },
