@@ -22,5 +22,29 @@ export class TareaencriptService {
     nuevaSol(mensaje:string,llave:string,algoritmo:string):Observable<any>{
       return this.http.post(this.sol,{mensaje,llave,algoritmo});
     }
+
+    private state='http://localhost:3000/bd/cambio';
+
+    cambioEstado(id:number):Observable<any>{
+      return this.http.post(this.state,{id});
+    }
     
+    private registro='http://localhost:3000/bd/completo';
+
+    tareaCompleta(cifrado:string,credito:number,user:string,id:number):Observable<any>{
+      return this.http.post(this.registro,{cifrado,credito,user,id});
+    }
+
+    private credito='http://localhost:3000/mostrar/creditos'
+
+    mostrarCreditos(user:string):Observable<any>{
+      return this.http.post(this.credito,{user});
+    }
+
+    private top='http://localhost:3000/mostrar/colaborador'
+
+    colaborador():Observable<any>{
+      return this.http.get(this.top);
+    }
+
 }

@@ -1,1 +1,47 @@
-<p>estadistica works!</p>
+<div class="container mx-auto p-3">
+    <h2>Tus Estadisticas</h2>
+    <!-- Mensaje si no hay un usuario o créditos -->
+    <div *ngIf="!user || creditos === 0" class="alert alert-warning">
+        No se encontraron créditos para el usuario. Asegúrate de haber iniciado sesión.
+      </div>
+    
+      <!-- Tabla de Créditos -->
+      <table *ngIf="user && creditos !== 0" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Créditos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ user }}</td>
+            <td>{{ creditos }}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    <hr>
+  
+    <!-- Tabla para mostrar los colaboradores -->
+    <h3>Colaboradores principales</h3>
+    <table *ngIf="colaboradores.length > 0" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Créditos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let colaborador of colaboradores">
+          <td>{{ colaborador.user }}</td>
+          <td>{{ colaborador.Credito_total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Mensaje si no hay colaboradores -->
+    <div *ngIf="colaboradores.length === 0">
+      <p>No se encontraron colaboradores.</p>
+    </div>
+  </div>

@@ -10,20 +10,26 @@ import { NuserService } from 'src/app/services/nuser.service';
 export class NuevouserComponent {
   username: string = '';
   password: string = '';
+  pass:string='';
   errorMessage: string = '';
   constructor(private router:Router,private nuser:NuserService){}
   createuser():void{
-    this.nuser.sendUser(this.username,this.password).subscribe({
-      next:(response)=>{
-        if(response){
-          alert("Se ha creado el nuevo Usuario");
-          this.router.navigate(['/login'])
+    if(this.pass===this.password){
+      this.nuser.sendUser(this.username,this.password).subscribe({
+        next:(response)=>{
+          if(response){
+            alert("Se ha creado el nuevo Usuario");
+            this.router.navigate(['/login'])
+          }
+          else{
+            alert("Error en el servidor");
+          }
         }
-        else{
-          alert("Error en el servidor");
-        }
-      }
-    })
+      })
+    }
+    else{
+      alert("Las contraseñas no coinciden");
+    }
   }
 
   cancel():void{

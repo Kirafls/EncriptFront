@@ -16,6 +16,11 @@
                     <input type="password" class="login-field" value="" placeholder="Contraseña" id="password" [(ngModel)]="password" name="password">
                     <label class="login-field-icon fui-lock" for="password"></label>
                     </div>
+
+                    <div class="control-group">
+                        <input type="password" class="login-field" value="" placeholder="Repite contraseña" id="pass" [(ngModel)]="pass" name="password">
+                        <label class="login-field-icon fui-lock" for="password"></label>
+                    </div>
                     <button class="btn btn-primary btn-large btn-block" type="submit">Crear usuario</button>
                     <button class="btn2 btn-primary btn-large btn-block" (click)="cancel()">Cancelar</button>
                   </form>

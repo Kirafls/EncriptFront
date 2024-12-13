@@ -1,5 +1,31 @@
 <div class="container text-center mx-auto p-3">
   <h2>Solicitud de tareas</h2>
-  <p>En este apartado tu puedes solicitar tareas, para realizar la encriptación y regresar los resultados</p>
+  <p>
+    En este apartado tu puedes solicitar tareas, para realizar la encriptación
+    y regresar los resultados.
+  </p>
 </div>
-<button >encriptacion</button>
+
+
+<!-- Mostrar los datos originales -->
+<div class="card my-4">
+  <div class="card-body">
+    <h4 class="card-title">Datos originales de la tarea:</h4>
+    <p><strong>Mensaje:</strong> {{ mensaje }}</p>
+    <p><strong>Llave:</strong> {{ llave }}</p>
+    <p><strong>Algoritmo:</strong> {{ algoritmo === 1 ? 'AES' : 'SHA256' }}</p>
+  </div>
+</div>
+
+<!-- Mostrar los datos encriptados -->
+<div class="card my-4" *ngIf="cifrado">
+  <div class="card-body">
+    <h4 class="card-title">Datos encriptados:</h4>
+    <p><strong>Cifrado:</strong> {{ cifrado }}</p>
+  </div>
+</div>
+
+<!-- Botón de encriptación -->
+<div class="text-center">
+  <button class="btn btn-primary" (click)="encriptacion()">Encriptar Tarea</button>
+</div>
